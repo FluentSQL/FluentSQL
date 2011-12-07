@@ -1,7 +1,7 @@
 <?php
 
-class FluentSqlConditionEquals
-  extends FluentSqlCondition {
+class FluentSqlQueryConditionEquals
+  extends FluentSqlQueryCondition {
 
   public function __construct($field, $likeString) {
     $this->_field = $field;

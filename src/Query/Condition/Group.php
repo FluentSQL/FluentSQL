@@ -1,7 +1,7 @@
 <?php
 
-abstract class FluentSqlConditionGroup
-  extends FluentSqlCondition {
+abstract class FluentSqlQueryConditionGroup
+  extends FluentSqlQueryCondition {
 
   protected $_concatenator = '';
 
@@ -13,7 +13,7 @@ abstract class FluentSqlConditionGroup
       $conditions = $conditions[0];
     }
     foreach ($conditions as $condition) {
-      FluentSqlConstraints::assertInstanceOf('FluentSqlCondition', $condition);
+      FluentSqlConstraints::assertInstanceOf('FluentSqlQueryCondition', $condition);
       $this->_conditions[] = $condition;
     }
   }

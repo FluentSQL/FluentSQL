@@ -10,19 +10,19 @@ $sql = FluentSql()
     new FluentSqlTable('user', 'u')
   )
   ->join(
-    FluentSqlJoin::create(
+    FluentSqlQueryJoin::create(
       new FluentSqlTable('order', 'o')
     )
     ->using(new FluentSqlField('user_id'))
   )
   ->join(
-  FluentSqlJoin::create(
+    FluentSqlQueryJoin::create(
       new FluentSqlTable('product', 'p')
     )
     ->using(new FluentSqlField('product_id'))
   )
   ->where(
-    new FluentSqlConditionEquals(
+    new FluentSqlQueryConditionEquals(
       new FluentSqlField('user_id'),
       '1'
     )
@@ -40,21 +40,21 @@ $sql = FluentSql()
     new FluentSqlTable('user', 'u')
   )
   ->join(
-  FluentSqlJoin::create(
+  FluentSqlQueryJoin::create(
       new FluentSqlTable('order', 'o')
     )->using(new FluentSqlField('user_id')))
   ->join(
-  FluentSqlJoin::create(
+  FluentSqlQueryJoin::create(
       new FluentSqlTable('products', 'p')
     )->using(new FluentSqlField('product_id'))
   )
   ->where(
-    new FluentSqlConditionEquals(
+    new FluentSqlQueryConditionEquals(
       new FluentSqlField('u.user_id'),
       '1234',
       ('1234' != 'abc')
     ),
-    new FluentSqlConditionEquals(
+    new FluentSqlQueryConditionEquals(
       new FluentSqlField('o.order_id'),
       'abc'
     )
