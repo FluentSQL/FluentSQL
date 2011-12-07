@@ -1,7 +1,7 @@
 <?php
 
-class FluentSqlQueryConditionEquals
-  extends FluentSqlQueryCondition {
+class FluentSqlConditionEquals
+  extends FluentSqlCondition {
 
   protected $_field;
   protected $_values;

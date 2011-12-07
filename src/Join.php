@@ -1,6 +1,6 @@
 <?php
 
-class FluentSqlQueryJoin {
+class FluentSqlJoin {
 
   protected $_joinType = ' JOIN ';
 
@@ -28,7 +28,7 @@ class FluentSqlQueryJoin {
     return $this;
   }
 
-  public function on(FluentSqlQueryCondition $condition) {
+  public function on(FluentSqlCondition $condition) {
     $this->_condition = $condition;
     return $this;
   }

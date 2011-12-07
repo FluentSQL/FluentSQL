@@ -1,6 +1,6 @@
 <?php
 
-abstract class FluentSqlQueryCondition extends FluentSqlObject {
+abstract class FluentSqlCondition extends FluentSqlObject {
 
   abstract public function get();
 

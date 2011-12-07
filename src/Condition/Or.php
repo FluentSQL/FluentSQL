@@ -1,6 +1,6 @@
 <?php
 
-class FluentSqlQueryConditionOr extends FluentSqlQueryConditionGroup {
+class FluentSqlConditionOr extends FluentSqlConditionGroup {
 
   protected $_concatenator = 'OR';
   

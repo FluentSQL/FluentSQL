@@ -1,7 +1,7 @@
 <?php
 
-class FluentSqlQueryConditionAnd
-  extends FluentSqlQueryConditionGroup {
+class FluentSqlConditionAnd
+  extends FluentSqlConditionGroup {
 
   protected $_concatenator = 'AND';
 
