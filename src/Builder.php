@@ -1,6 +1,6 @@
 <?php
 
-class FluentSqlQueryBuilder extends FluentSqlObject {
+class FluentSqlBuilder extends FluentSqlObject {
 
   protected $_fields = NULL;
   protected $_table = '';
@@ -25,15 +25,15 @@ class FluentSqlQueryBuilder extends FluentSqlObject {
     return $this;
   }
 
-  public function join(FluentSqlQueryJoin $join) {
-    FluentSqlConstraints::assertInstanceOf('FluentSqlQueryJoin', $join);
+  public function join(FluentSqlJoin $join) {
+    FluentSqlConstraints::assertInstanceOf('FluentSqlJoin', $join);
     $this->_joins[] = $join;
     return $this;
   }
 
-  public function where(FluentSqlQueryCondition $condition) {
+  public function where(FluentSqlCondition $condition) {
     if (func_num_args() > 1) {
-      $condition = new FluentSqlQueryConditionAnd(func_get_args());
+      $condition = new FluentSqlConditionAnd(func_get_args());
     }
     $this->_where = $condition;
     return $this;
